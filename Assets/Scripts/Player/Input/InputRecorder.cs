@@ -6,7 +6,6 @@ using UnityEngine;
 public class InputRecorder : Player
 {
     public string playerTag;
-    public string a;
 
     private GameObject player;
 
