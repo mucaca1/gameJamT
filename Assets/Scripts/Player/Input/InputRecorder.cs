@@ -7,6 +7,7 @@ public class InputRecorder : Player
 {
     public string playerTag;
 
+
     private GameObject player;
 
     // Start is called before the first frame update
