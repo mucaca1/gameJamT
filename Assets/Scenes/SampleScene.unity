@@ -153,9 +153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78b5e55d4999044594d14a823e6b514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.1
-  maxHealth: 0
+  moveSpeed: 2
+  health: 0
   direction: {x: 0, y: 0}
+  wallPrefab: {fileID: 0}
+  chargePrefab: {fileID: 0}
   playerTag: 2
 --- !u!65 &553493182
 BoxCollider:
@@ -337,9 +339,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78b5e55d4999044594d14a823e6b514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.1
-  maxHealth: 0
+  moveSpeed: 2
+  health: 0
   direction: {x: 0, y: 0}
+  wallPrefab: {fileID: 0}
+  chargePrefab: {fileID: 0}
   playerTag: 1
 --- !u!1 &989992255
 GameObject:
