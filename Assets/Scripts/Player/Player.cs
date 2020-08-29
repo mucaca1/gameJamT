@@ -13,11 +13,12 @@ public class Player : MonoBehaviour
     public GameObject chargePrefab;
 
     private static float wallOffset = 1;
+    public Animator animator;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
 
     public void Attack()
     {
+        animator.SetBool("isShooting", true);
         GameObject a = Instantiate(chargePrefab, this.transform.position, Quaternion.identity);
         a.GetComponent<Shoot>().direction = this.direction;
     }
@@ -48,6 +50,7 @@ public class Player : MonoBehaviour
             if (health <= 0)
             {
                 // Skap!
+                animator.SetBool("isDead", true);
             }
         }
     }
