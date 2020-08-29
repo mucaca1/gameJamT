@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     private GameObject []p1Life = new GameObject[3];
     private GameObject []p2Life = new GameObject[3];
 
+    public GameObject gameOverScreen;
+
     private void Awake() 
     {
         Player.onDeath += PlayerDeath;
@@ -24,9 +26,14 @@ public class GameManager : MonoBehaviour
 
     private void InitGame()
     {
+        gameOverScreen.SetActive(false);
         DestroyAllChildrens(player1LifeBar);
         DestroyAllChildrens(player2LifeBar);
         SpawnLifeBar();
+        foreach (var o in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            o.GetComponent<Player>().Respawn();
+        }
     }
 
     private void SpawnLifeBar()
@@ -60,5 +67,19 @@ public class GameManager : MonoBehaviour
     private void PlayerDeath(Player.PlayerTag deadPlayerTag)
     {
         // TODO handle player death - GAME OVER screen?
+        InputManager.onFire += RestartGame;
+        Invoke("GameOverScreen", 2);
+    }
+
+    public void RestartGame(bool b)
+    {
+        InputManager.onFire -= RestartGame;
+        
+        InitGame();
+    }
+
+    private void GameOverScreen()
+    {
+        gameOverScreen.SetActive(true);
     }
 }

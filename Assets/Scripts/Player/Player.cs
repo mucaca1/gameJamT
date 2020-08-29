@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public static event Action<PlayerTag, int> onHit;
     public static event Action<PlayerTag> onDeath;
 
+    private Vector3 initPosition;
+
     public enum PlayerTag : int
     {
         One = 1,
@@ -52,7 +54,9 @@ public class Player : MonoBehaviour
             inputManager.inputAlternative = InputManager.InputAlternative.Two;
         }
 
-        direction = playerTag == PlayerTag.One ? Vector2.right : Vector2.left;        
+        direction = playerTag == PlayerTag.One ? Vector2.right : Vector2.left;
+
+        initPosition = this.transform.position;
     }
 
     // Update is called once per frame
@@ -119,6 +123,15 @@ public class Player : MonoBehaviour
 
         if (health <= 0) 
             Die();
+    }
+
+    public void Respawn()
+    {
+        health = 3;
+        this.transform.position = initPosition;
+        animator.SetBool("isDead", false);
+        inputManager.enabled = true;
+        GetComponent<BoxCollider2D>().enabled = true;
     }
 
     private void Die() 
