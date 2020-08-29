@@ -27,7 +27,7 @@ public class InputRecorder : Player
         
         if (horizontal != 0 || vertical != 0)
         {
-            this.animator.SetBool("isMoving", true);
+            //this.animator.SetBool("isMoving", true);
             gameObject.transform.position += new Vector3(horizontal * moveSpeed * Time.deltaTime, vertical * moveSpeed * -1f * Time.deltaTime, 0.0f);
             direction = new Vector2(horizontal, vertical * -1f);
             

@@ -114,6 +114,7 @@ MonoBehaviour:
     type: 3}
   chargePrefab: {fileID: 2906850476162430614, guid: 54ba6da2f80fdd6438e58bf81344a726,
     type: 3}
+  animator: {fileID: 9100000, guid: 49a6cfda3b412ce478405ebd7286e09b, type: 2}
   playerTag: 1
 --- !u!95 &6210291072675109089
 Animator:

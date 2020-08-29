@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -16,9 +17,13 @@ public class Player : MonoBehaviour
     public Animator animator;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         animator = this.GetComponent<Animator>();
+    }
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
@@ -29,7 +34,7 @@ public class Player : MonoBehaviour
 
     public void Attack()
     {
-        animator.SetBool("isShooting", true);
+        //animator.SetBool("isShooting", true);
         GameObject a = Instantiate(chargePrefab, this.transform.position, Quaternion.identity);
         a.GetComponent<Shoot>().direction = this.direction;
     }
