@@ -37,6 +37,9 @@ public class Player : MonoBehaviour
         if (inputManager.GetJoystickInput().x != 0 || inputManager.GetJoystickInput().y != 0)
         {
             //this.animator.SetBool("isMoving", true);
+            this.animator.SetBool("isMoving", true);
+            animator.SetFloat("xAxisMove", inputManager.GetJoystickInput().x);
+            animator.SetFloat("yAxisMove", inputManager.GetJoystickInput().y);
 
             gameObject.transform.position += new Vector3(
                 inputManager.GetJoystickInput().x,
