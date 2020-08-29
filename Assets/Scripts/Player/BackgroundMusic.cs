@@ -4,6 +4,7 @@ using Object = UnityEngine.Object;
 
 public class BackgroundMusic : MonoBehaviour
 {
+    public int musicIndex;
     private GameObject backgroundMusic;
 
     private AudioClip gameBackground;
@@ -12,7 +13,7 @@ public class BackgroundMusic : MonoBehaviour
     {
         LoadAudioClipFromFile("Audio/Background", ref gameBackground);
         LoadAudioClipFromFile("Audio/Menu", ref menuBackground);
-        PlayBackgroundMusic(0);
+        PlayBackgroundMusic(musicIndex);
     }
 
     public GameObject PlayBackgroundMusic(int index) {
