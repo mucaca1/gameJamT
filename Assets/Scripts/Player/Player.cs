@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(InputManager))]
 public class Player : MonoBehaviour
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public InputManager inputManager;
 
-    public AudioClip attack;
+    public AudioClip[] attack;
     
     // Start is called before the first frame update
     void Awake()
@@ -61,7 +62,7 @@ public class Player : MonoBehaviour
 
         if (inputManager.GetFireButton())
         {
-            SoundPlayer.PlaySound(attack);
+            SoundPlayer.PlaySound(attack[Random.Range(0,attack.Length)]);
             Attack();
             Debug.Log("Player " + inputManager.inputAlternative + ": Fire button");
         }

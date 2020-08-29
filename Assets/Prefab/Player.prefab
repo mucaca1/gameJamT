@@ -89,7 +89,9 @@ MonoBehaviour:
     type: 3}
   animator: {fileID: 0}
   inputManager: {fileID: 0}
-  attack: {fileID: 8300000, guid: 10b1500ae421efb42ab7e7600638c6d2, type: 3}
+  attack:
+  - {fileID: 8300000, guid: 3c7eda351186b1b4e8e92463a832e439, type: 3}
+  - {fileID: 8300000, guid: 6f0b8bf3982c21d409f616910609fbfd, type: 3}
 --- !u!61 &-3967431770490943067
 BoxCollider2D:
   m_ObjectHideFlags: 0
