@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ public class Player : MonoBehaviour
 
     public GameObject wallPrefab;
     public GameObject chargePrefab;
+
+    private static float wallOffset = 1;
     
     // Start is called before the first frame update
     void Start()
@@ -23,15 +26,29 @@ public class Player : MonoBehaviour
         
     }
 
-    void Attack()
+    public void Attack()
     {
-        GameObject a = Instantiate(chargePrefab, new Vector3(0, 0, 0), Quaternion.identity);
-        a.getComponent<Shoot>().direction = this.direction;
+        GameObject a = Instantiate(chargePrefab, this.transform.position, Quaternion.identity);
+        a.GetComponent<Shoot>().direction = this.direction;
     }
 
-    void MakeWall()
+    public void MakeWall()
     {
-        
+        GameObject a = Instantiate(wallPrefab, this.transform.position + new Vector3(direction.x * wallOffset, direction.y * wallOffset, 0.0f), Quaternion.identity);
+        a.GetComponent<Shoot>().direction = this.direction;
     }
 
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("Collision");
+        if (other.gameObject.tag == "Shoot")
+        {
+            // zasiahnutý
+            health--;
+            if (health <= 0)
+            {
+                // Skap!
+            }
+        }
+    }
 }

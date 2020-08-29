@@ -38,11 +38,13 @@ public class InputRecorder : Player
 
         if (fireButton)
         {
+            Attack();
             Debug.Log("Player " + playerTag + ": Fire button");
         }
 
         if (actionButton)
         {
+            MakeWall();
             Debug.Log("Player " + playerTag + ": Action button");
         }
         if (menu)
