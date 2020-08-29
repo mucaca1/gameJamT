@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 {
 
     public static event Action<PlayerTag> onHit;
+    public static event Action<PlayerTag> onDeath;
 
     public enum PlayerTag : int
     {
@@ -120,11 +121,12 @@ public class Player : MonoBehaviour
         health -= damage;
         Debug.Log("Taken damage :" + damage);
 
-        onHit.Invoke(playerTag);
+        onHit?.Invoke(playerTag);
 
         if (health <= 0) 
         {
             Die();
+            onDeath?.Invoke(playerTag);
         }
     }
 
