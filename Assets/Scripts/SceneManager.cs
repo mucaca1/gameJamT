@@ -4,11 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneManager : MonoBehaviour
 {
+    public AudioClip pass;
     private void Update()
     {
         bool actionButton = Input.GetKeyDown("joystick 1 button 0") || Input.GetKeyDown("e");
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "SimpleScene" && actionButton)
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "GamePlay" && actionButton)
         {
+            SoundPlayer.PlaySound(pass);
             Debug.Log("Load scene");
             PlayScene();
         }
@@ -16,6 +18,6 @@ public class SceneManager : MonoBehaviour
 
     public void PlayScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GamePlay");
     }
 }
