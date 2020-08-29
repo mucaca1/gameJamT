@@ -8,6 +8,17 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(InputManager))]
 public class Player : MonoBehaviour
 {
+
+    public enum PlayerTag : int
+    {
+        One = 1,
+        Two = 2
+    }
+
+    public AnimatorController[] animations;
+
+    public PlayerTag playerTag = PlayerTag.One;
+
     public float moveSpeed;
     public float health;
     public Vector2 direction;
@@ -28,6 +39,16 @@ public class Player : MonoBehaviour
     {
         animator = this.GetComponent<Animator>();
         inputManager = GetComponent<InputManager>();
+
+        animator.runtimeAnimatorController = animations[((int)playerTag) - 1];
+
+        if (playerTag == PlayerTag.One) {
+            inputManager.inputAlternative = InputManager.InputAlternative.One;
+        }
+        else {
+            inputManager.inputAlternative = InputManager.InputAlternative.Two;
+        }
+        
     }
 
     void Start()
