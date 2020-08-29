@@ -124,19 +124,4 @@ public class Player : MonoBehaviour
         Debug.Log("Taken damage :" + damage);
         animator.SetBool("isDead", health <= 0);
     }
-
-    public void OnCollisionEnter2D(Collision2D other)
-    {
-        Debug.Log("Collision");
-        if (other.gameObject.tag == "Shoot")
-        {
-            // zasiahnutý
-            health--;
-            if (health <= 0)
-            {
-                // Skap!
-                animator.SetBool("isDead", true);
-            }
-        }
-    }
 }
