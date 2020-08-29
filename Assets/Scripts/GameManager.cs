@@ -17,11 +17,15 @@ public class GameManager : MonoBehaviour
     {
         DestroyAllChildrens(player1LifeBar);
         DestroyAllChildrens(player2LifeBar);
+        SpawnLifeBar();
     }
 
     private void SpawnLifeBar()
     {
-        
+        for (int i = 0; i < 2; i++) {
+            GameObject islandView1 = Instantiate(lifePrefab, player1LifeBar.transform);
+            GameObject islandView2 = Instantiate(lifePrefab, player2LifeBar.transform);
+        }
     }
     
     private void DestroyAllChildrens(GameObject obj) {

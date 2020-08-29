@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5148665672437223864}
   - component: {fileID: 4235633354806092516}
   - component: {fileID: 1354305093374227774}
+  - component: {fileID: -6141778810968915717}
   m_Layer: 5
   m_Name: Hearth
   m_TagString: Untagged
@@ -73,3 +74,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-6141778810968915717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5585021267923854729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffee367ae62e4dc490ef5b9e8833b84c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeUp: {fileID: 0}
+  lifeDown: {fileID: 0}
