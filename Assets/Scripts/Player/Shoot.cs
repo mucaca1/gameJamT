@@ -34,7 +34,6 @@ public class Shoot : MonoBehaviour
     
     private void DestroyBullet() 
     {
-        Debug.Log("ASDASD");
         Destroy(gameObject);
     }
 }
