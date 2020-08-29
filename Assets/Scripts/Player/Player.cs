@@ -124,7 +124,12 @@ public class Player : MonoBehaviour
         Debug.Log("Taken damage :" + damage);
 
         if (health <= 0) {
-            animator.SetBool("isDead", true);
+            Die();
         }
+    }
+
+    private void Die() {
+        animator.SetBool("isDead", true);
+        GetComponent<BoxCollider2D>().enabled = false;
     }
 }
