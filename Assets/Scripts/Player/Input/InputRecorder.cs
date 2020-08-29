@@ -21,23 +21,33 @@ public class InputRecorder : Player
     {
         float vertical = Input.GetAxis("Vertical" + playerTag);
         float horizontal = Input.GetAxis("Horizontal" + playerTag);
-        float actionButton = Input.GetAxis("Fire" + playerTag);
-        float fireButton = Input.GetAxis("Action" + playerTag);
-        float menu = Input.GetAxis("Menu" + playerTag);
+        bool actionButton = Input.GetKeyDown("joystick " + playerTag + " button 0");
+        bool fireButton = Input.GetKeyDown("joystick " + playerTag + " button 1");
+        bool menu = Input.GetKeyDown("joystick " + playerTag + " button 6");
+        
         if (horizontal != 0 || vertical != 0)
         {
-            gameObject.transform.position += new Vector3(horizontal * moveSpeed, vertical * moveSpeed * -1f, 0.0f);
+            gameObject.transform.position += new Vector3(horizontal * moveSpeed * Time.deltaTime, vertical * moveSpeed * -1f * Time.deltaTime, 0.0f);
             direction = new Vector2(horizontal, vertical * -1f);
+            
+            if (direction.x != 0 && direction.y != 0)
+                direction.y = 0;
+            
+            Debug.Log("Player " + playerTag + ": horizontal - [" + horizontal + ", vertical - " + vertical * -1 + "]");
         }
 
-        if (fireButton != 0 || actionButton != 0)
+        if (fireButton)
         {
-            Debug.Log("Player " + playerTag + " - Fire " + fireButton + " | action " + actionButton);
+            Debug.Log("Player " + playerTag + ": Fire button");
         }
 
-        if (menu != 0)
+        if (actionButton)
         {
-            Debug.Log("Player " + playerTag + " - Menu " + menu);
+            Debug.Log("Player " + playerTag + ": Action button");
+        }
+        if (menu)
+        {
+            Debug.Log("Player " + playerTag + ": Menu button");
         }
     }
 }

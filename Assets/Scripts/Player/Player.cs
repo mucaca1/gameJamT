@@ -5,8 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float moveSpeed;
-    public float maxHealth;
+    public float health;
     public Vector2 direction;
+
+    public GameObject wallPrefab;
+    public GameObject chargePrefab;
     
     // Start is called before the first frame update
     void Start()
@@ -19,4 +22,16 @@ public class Player : MonoBehaviour
     {
         
     }
+
+    void Attack()
+    {
+        GameObject a = Instantiate(chargePrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        a.getComponent<Shoot>().direction = this.direction;
+    }
+
+    void MakeWall()
+    {
+        
+    }
+
 }
