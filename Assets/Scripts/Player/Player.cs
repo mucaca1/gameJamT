@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 public class Player : MonoBehaviour
 {
 
-    public static event Action<PlayerTag> onHit;
+    public static event Action<PlayerTag, int> onHit;
     public static event Action<PlayerTag> onDeath;
 
     public enum PlayerTag : int
@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
         
         health -= damage;
 
-        onHit?.Invoke(playerTag);
+        onHit?.Invoke(playerTag, (int)health);
 
         if (health <= 0) 
             Die();

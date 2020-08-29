@@ -86,5 +86,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffee367ae62e4dc490ef5b9e8833b84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeUp: {fileID: 0}
-  lifeDown: {fileID: 0}
+  lifeUp: {fileID: 21300000, guid: 627c522325930c84fa6585b90ddd5001, type: 3}
+  lifeDown: {fileID: 21300000, guid: 05c4139c81a6a16409e50d886db38a4a, type: 3}
