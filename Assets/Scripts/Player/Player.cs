@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 
+[RequireComponent(typeof(InputManager))]
 public class Player : MonoBehaviour
 {
     public float moveSpeed;
