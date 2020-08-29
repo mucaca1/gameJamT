@@ -122,6 +122,9 @@ public class Player : MonoBehaviour
         SoundPlayer.PlaySound(hit);
         health -= damage;
         Debug.Log("Taken damage :" + damage);
-        animator.SetBool("isDead", health <= 0);
+
+        if (health <= 0) {
+            animator.SetBool("isDead", true);
+        }
     }
 }
