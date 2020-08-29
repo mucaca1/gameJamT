@@ -30,6 +30,11 @@ public class InputManager : MonoBehaviour
     // Captures current inputs from Unity's InputManager
     void FixedUpdate() 
     {
+        if (Input.anyKey)
+        {
+            Debug.Log("A key or mouse click has been detected");
+        }
+        
         joystick.x = Input.GetAxisRaw("Horizontal" + (int)inputAlternative);
         joystick.y = Input.GetAxisRaw("Vertical" + (int)inputAlternative);
         
