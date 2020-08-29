@@ -3,11 +3,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour 
 {
-    public static event Action<Player.PlayerTag> onPlayerDeath;
-
     private void Awake() 
     {
-        onPlayerDeath += PlayerDeath;
+        Player.onDeath += PlayerDeath;
     }
 
     private void PlayerDeath(Player.PlayerTag deadPlayerTag)
