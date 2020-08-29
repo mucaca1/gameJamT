@@ -44,8 +44,10 @@ public class Player : MonoBehaviour
                 0.0f
             ) * moveSpeed * Time.deltaTime;
             
+            direction = inputManager.GetJoystickInput();
+            direction.y *= -1f;
             
-            Debug.Log("Player " + inputManager.inputAlternative + ": horizontal - [" + inputManager.GetJoystickInput().x + ", vertical - " + inputManager.GetJoystickInput().y * -1 + "]");
+            Debug.Log("Player " + inputManager.inputAlternative + ": horizontal - [" + inputManager.GetJoystickInput().x + "], vertical - [" + inputManager.GetJoystickInput().y * -1 + "]");
         }
         else
         {
@@ -74,13 +76,23 @@ public class Player : MonoBehaviour
     {
         //animator.SetBool("isShooting", true);
         GameObject a = Instantiate(chargePrefab, this.transform.position, Quaternion.identity);
-        a.GetComponent<Shoot>().direction = this.direction;
+        Debug.Log("Shoot dir: " + direction);
+        Shoot bullet = a.GetComponent<Shoot>();
+        bullet.direction = direction;
+        bullet.source = gameObject;
     }
 
     public void MakeWall()
     {
         GameObject a = Instantiate(wallPrefab, this.transform.position + new Vector3(direction.x * wallOffset, direction.y * wallOffset, 0.0f), Quaternion.identity);
         a.GetComponent<Shoot>().direction = this.direction;
+    }
+
+    public void Hit(int damage) 
+    {
+        health -= damage;
+        Debug.Log("Taken damage :" + damage);
+        animator.SetBool("isDead", health <= 0);
     }
 
     public void OnCollisionEnter2D(Collision2D other)
