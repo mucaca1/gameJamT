@@ -23,8 +23,8 @@ public class InputManager : MonoBehaviour
     // Captures current inputs from Unity's InputManager
     void FixedUpdate() 
     {
-        joystick.x = Input.GetAxis("Horizontal" + (int)inputAlternative);
-        joystick.y = Input.GetAxis("Vertical" + (int)inputAlternative);
+        joystick.x = Input.GetAxisRaw("Horizontal" + (int)inputAlternative);
+        joystick.y = Input.GetAxisRaw("Vertical" + (int)inputAlternative);
         
         actionButton = Input.GetKeyDown("joystick " + (int)inputAlternative + " button 0");
         fireButton = Input.GetKeyDown("joystick " + (int)inputAlternative + " button 1");
