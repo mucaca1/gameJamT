@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
 
     public Animator animator;
     public InputManager inputManager;
+
+    public AudioClip attack;
     
     // Start is called before the first frame update
     void Awake()
@@ -56,6 +58,7 @@ public class Player : MonoBehaviour
 
         if (inputManager.GetFireButton())
         {
+            SoundPlayer.PlaySound(attack);
             Attack();
             Debug.Log("Player " + inputManager.inputAlternative + ": Fire button");
         }
