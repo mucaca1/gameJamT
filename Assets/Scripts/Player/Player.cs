@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public InputManager inputManager;
 
     public AudioClip[] attack;
+    public AudioClip hit;
     
     // Start is called before the first frame update
     void Awake()
@@ -97,6 +98,7 @@ public class Player : MonoBehaviour
 
     public void Hit(int damage) 
     {
+        SoundPlayer.PlaySound(hit);
         health -= damage;
         Debug.Log("Taken damage :" + damage);
         animator.SetBool("isDead", health <= 0);

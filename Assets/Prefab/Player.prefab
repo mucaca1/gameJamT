@@ -92,6 +92,7 @@ MonoBehaviour:
   attack:
   - {fileID: 8300000, guid: 3c7eda351186b1b4e8e92463a832e439, type: 3}
   - {fileID: 8300000, guid: 6f0b8bf3982c21d409f616910609fbfd, type: 3}
+  hit: {fileID: 8300000, guid: 2e601ddb714daa34d9a74732618ab7a8, type: 3}
 --- !u!61 &-3967431770490943067
 BoxCollider2D:
   m_ObjectHideFlags: 0
