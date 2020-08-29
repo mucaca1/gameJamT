@@ -51,11 +51,6 @@ public class Player : MonoBehaviour
         
     }
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -123,13 +118,16 @@ public class Player : MonoBehaviour
         health -= damage;
         Debug.Log("Taken damage :" + damage);
 
-        if (health <= 0) {
+        if (health <= 0) 
+        {
             Die();
         }
     }
 
-    private void Die() {
+    private void Die() 
+    {
         animator.SetBool("isDead", true);
+        inputManager.enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
     }
 }

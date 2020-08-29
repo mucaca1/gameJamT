@@ -19,6 +19,14 @@ public class InputManager : MonoBehaviour
 
     [HideInInspector] public InputAlternative inputAlternative = InputAlternative.One;
 
+    private void OnDisable() 
+    {
+        joystick *= 0;
+        actionButton = false;
+        fireButton = false;
+        menuButton = false;    
+    }
+
     // Captures current inputs from Unity's InputManager
     void FixedUpdate() 
     {
