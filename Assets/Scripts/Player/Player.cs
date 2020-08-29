@@ -60,8 +60,7 @@ public class Player : MonoBehaviour
     {
         if (inputManager.GetJoystickInput().x != 0 || inputManager.GetJoystickInput().y != 0)
         {
-            //this.animator.SetBool("isMoving", true);
-            this.animator.SetBool("isMoving", true);
+            animator.SetBool("isMoving", true);
             animator.SetFloat("xAxisMove", inputManager.GetJoystickInput().x);
             animator.SetFloat("yAxisMove", inputManager.GetJoystickInput().y);
 
@@ -78,7 +77,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            this.animator.SetBool("isMoving", false);
+            animator.SetBool("isMoving", false);
         }
 
         if (inputManager.GetFireButton())
@@ -90,9 +89,9 @@ public class Player : MonoBehaviour
 
         if (inputManager.GetActionButton())
         {
-            MakeWall();
             Debug.Log("Player " + inputManager.inputAlternative + ": Action button");
         }
+
         if (inputManager.GetMenuButton())
         {
             Debug.Log("Player " + inputManager.inputAlternative + ": Menu button");
@@ -104,35 +103,27 @@ public class Player : MonoBehaviour
     {
         //animator.SetBool("isShooting", true);
         GameObject a = Instantiate(chargePrefab, this.transform.position, Quaternion.identity);
-        Debug.Log("Shoot dir: " + direction);
         Shoot bullet = a.GetComponent<Shoot>();
-        bullet.direction = direction;
-        bullet.source = gameObject;
-    }
-
-    public void MakeWall()
-    {
-        GameObject a = Instantiate(wallPrefab, this.transform.position + new Vector3(direction.x * wallOffset, direction.y * wallOffset, 0.0f), Quaternion.identity);
-        a.GetComponent<Shoot>().direction = this.direction;
+        bullet.ShootBullet(direction, gameObject, (int)playerTag);
     }
 
     public void Hit(int damage) 
     {
-        SoundPlayer.PlaySound(hit);
-        health -= damage;
         Debug.Log("Taken damage :" + damage);
+
+        SoundPlayer.PlaySound(hit);
+        
+        health -= damage;
 
         onHit?.Invoke(playerTag);
 
         if (health <= 0) 
-        {
             Die();
-            onDeath?.Invoke(playerTag);
-        }
     }
 
     private void Die() 
     {
+        onDeath?.Invoke(playerTag);
         animator.SetBool("isDead", true);
         inputManager.enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
