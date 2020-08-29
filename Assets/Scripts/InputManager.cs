@@ -18,7 +18,7 @@ public class InputManager : MonoBehaviour
     private bool menuButton;
 
     [Tooltip("Which input to use")]
-    public InputAlternative inputAlternative;
+    public InputAlternative inputAlternative = InputAlternative.One;
 
     // Captures current inputs from Unity's InputManager
     void FixedUpdate() 
