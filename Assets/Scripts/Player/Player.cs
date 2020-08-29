@@ -51,7 +51,8 @@ public class Player : MonoBehaviour
         else {
             inputManager.inputAlternative = InputManager.InputAlternative.Two;
         }
-        
+
+        direction = playerTag == PlayerTag.One ? Vector2.right : Vector2.left;        
     }
 
     // Update is called once per frame
