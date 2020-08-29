@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
                 inputManager.GetJoystickInput().x,
                 inputManager.GetJoystickInput().y * -1f,
                 0.0f
-            ) * moveSpeed * Time.deltaTime;
+            ).normalized * moveSpeed * Time.deltaTime;
             
             direction = inputManager.GetJoystickInput();
             direction.y *= -1f;
