@@ -9,6 +9,8 @@ using Random = UnityEngine.Random;
 public class Player : MonoBehaviour
 {
 
+    public static event Action<PlayerTag> onHit;
+
     public enum PlayerTag : int
     {
         One = 1,
@@ -117,6 +119,8 @@ public class Player : MonoBehaviour
         SoundPlayer.PlaySound(hit);
         health -= damage;
         Debug.Log("Taken damage :" + damage);
+
+        onHit.Invoke(playerTag);
 
         if (health <= 0) 
         {
