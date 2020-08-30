@@ -14,7 +14,8 @@ public class CollectiblesManager : MonoBehaviour
         Collectible.onCollect += OnCollectibleCollected;
         players = FindObjectsOfType<Player>();
 
-        Spawn();
+        activeSpawnPoint = UnityEngine.Random.Range(0, collectibles.Length);
+        collectibles[activeSpawnPoint].Spawn();
     }
 
     private void Spawn() 
