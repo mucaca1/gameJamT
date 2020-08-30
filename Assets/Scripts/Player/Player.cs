@@ -135,6 +135,7 @@ public class Player : MonoBehaviour
     }
 
     // Omae wa mou shindeiru
+    // https://www.youtube.com/watch?v=dNQs_Bef_V8
     private void Die() 
     {
         onDeath?.Invoke(playerTag);
