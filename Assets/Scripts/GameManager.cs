@@ -157,7 +157,16 @@ public class GameManager : MonoBehaviour
         gameStatus.Invoke(false);
         Debug.Log("GameOver");
         InputManager.onFire += RestartGame;
+        InputManager.onAction += GoToManu;
         GameOverScreen();
+    }
+
+    private void GoToManu(bool b)
+    {
+        InputManager.onFire -= RestartGame;
+        InputManager.onAction -= GoToManu;
+        
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 
     private void GameOverScreen()
