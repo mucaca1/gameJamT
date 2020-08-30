@@ -61,7 +61,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
+    - _BlinkDuration: 5
     - _BlinkSpeed: 10
+    - _BlinkingTime: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
