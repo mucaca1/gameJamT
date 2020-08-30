@@ -233,4 +233,12 @@ public class GameManager : MonoBehaviour
     {
         t.color = c;
     }
+
+    private void OnDestroy() 
+    {
+        Player.onDeath -= PlayerDeath;
+        Player.onSpawn -= PlayerSpawn;
+        Player.onHit -= OnPlayerHit;  
+        Collectible.onCollect -= ScoreUpdate;
+    }
 }

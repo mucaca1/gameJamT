@@ -55,4 +55,9 @@ public class CollectiblesManager : MonoBehaviour
         collectible.Despawn();
         Spawn();
     }
+
+    private void OnDestroy() 
+    {
+        Collectible.onCollect -= OnCollectibleCollected;    
+    }
 }

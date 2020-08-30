@@ -2925,7 +2925,7 @@ MonoBehaviour:
   - {fileID: 60298786}
   gameOverScreen: {fileID: 78650359}
   timerText: {fileID: 517638168}
-  gameTime: 50
+  gameTime: 5
   player1Score: {fileID: 1390310281}
   player2Score: {fileID: 1374787834}
   winPlayerInfoText: {fileID: 721432858}
