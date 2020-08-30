@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private void Awake() 
     {
         Player.onDeath += PlayerDeath;
+        Player.onSpawn += PlayerSpawn;
     }
 
     private void Start()
@@ -29,20 +30,30 @@ public class GameManager : MonoBehaviour
         gameOverScreen.SetActive(false);
         DestroyAllChildrens(player1LifeBar);
         DestroyAllChildrens(player2LifeBar);
-        SpawnLifeBar();
+
+        // This is done in PlayerSpawn when player spawns
+        //SpawnLifeBar(Player.PlayerTag.One);
+        //SpawnLifeBar(Player.PlayerTag.Two);
+        
         foreach (var o in GameObject.FindGameObjectsWithTag("Player"))
         {
             o.GetComponent<Player>().Respawn();
         }
     }
 
-    private void SpawnLifeBar()
+    private void SpawnLifeBar(Player.PlayerTag playerTag)
     {
         for (int i = 0; i < 3; i++) {
-            GameObject islandView1 = Instantiate(lifePrefab, player1LifeBar.transform);
-            p1Life[i] = islandView1;
-            GameObject islandView2 = Instantiate(lifePrefab, player2LifeBar.transform);
-            p2Life[i] = islandView2;
+            if  (playerTag == Player.PlayerTag.One) 
+            {
+                GameObject islandView1 = Instantiate(lifePrefab, player1LifeBar.transform);
+                p1Life[i] = islandView1;
+            }
+            else 
+            {
+                GameObject islandView2 = Instantiate(lifePrefab, player2LifeBar.transform);
+                p2Life[i] = islandView2;
+            }
         }
     }
 
@@ -67,8 +78,22 @@ public class GameManager : MonoBehaviour
     private void PlayerDeath(Player.PlayerTag deadPlayerTag)
     {
         // TODO handle player death - GAME OVER screen?
-        InputManager.onFire += RestartGame;
-        Invoke("GameOverScreen", 2);
+        //InputManager.onFire += RestartGame;
+        //Invoke("GameOverScreen", 2);
+    }
+
+    private void PlayerSpawn(Player player)
+    {
+        if  (player.playerTag == Player.PlayerTag.One) 
+        {
+            DestroyAllChildrens(player1LifeBar);
+        }
+        else 
+        {
+            DestroyAllChildrens(player2LifeBar);
+        }
+
+        SpawnLifeBar(player.playerTag);
     }
 
     public void RestartGame(bool b)
