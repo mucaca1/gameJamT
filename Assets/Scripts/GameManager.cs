@@ -156,8 +156,6 @@ public class GameManager : MonoBehaviour
     {
         gameStatus.Invoke(false);
         Debug.Log("GameOver");
-        InputManager.onFire += RestartGame;
-        InputManager.onAction += GoToManu;
         GameOverScreen();
     }
 
@@ -178,6 +176,8 @@ public class GameManager : MonoBehaviour
 
     private void SecretText()
     {
+        InputManager.onFire += RestartGame;
+        InputManager.onAction += GoToManu;
         int i = (player1ScoreCounter > player2ScoreCounter) ? 1 : 2;
         winPlayerInfoText.text = "JK. Player " + i + " win. Maybe.";
         if (player1ScoreCounter == player2ScoreCounter)
