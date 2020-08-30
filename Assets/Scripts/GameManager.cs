@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    
+    public static event Action<bool> gameStatus;
+    
     public GameObject player1LifeBar;
     public GameObject player2LifeBar;
 
@@ -21,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     public Text player1Score;
     public Text player2Score;
+    public Text winPlayerInfoText;
 
     private int player1ScoreCounter;
     private int player2ScoreCounter;
@@ -44,6 +48,9 @@ public class GameManager : MonoBehaviour
 
     private void InitGame()
     {
+        gameStatus.Invoke(true);
+        winPlayerInfoText.text = "";
+        
         player1ScoreCounter = -1;
         player2ScoreCounter = -1;
 
@@ -147,14 +154,25 @@ public class GameManager : MonoBehaviour
 
     private void EndGame()
     {
+        gameStatus.Invoke(false);
         Debug.Log("GameOver");
         InputManager.onFire += RestartGame;
-        Invoke("GameOverScreen", 2);
+        GameOverScreen();
     }
 
     private void GameOverScreen()
     {
         gameOverScreen.SetActive(true);
+        winPlayerInfoText.text = "";
+        Invoke("SecretText", 2f);
+    }
+
+    private void SecretText()
+    {
+        int i = (player1ScoreCounter > player2ScoreCounter) ? 1 : 2;
+        winPlayerInfoText.text = "JK. Player " + i + " win. Maybe.";
+        if (player1ScoreCounter == player2ScoreCounter)
+            winPlayerInfoText.text = "No one wins. So sad. :(";
     }
 
     public void ScoreUpdate(Player.PlayerTag tag, Collectible collectible)
