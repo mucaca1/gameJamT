@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &60298786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5585021267923854729, guid: 56de21bcefd948249a928a4c8d24dbfc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1396171885}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &78650359
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +949,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &694121656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5585021267923854729, guid: 56de21bcefd948249a928a4c8d24dbfc,
+    type: 3}
+  m_PrefabInstance: {fileID: 292356475}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &721432856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,6 +1037,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5148665672437223864, guid: 56de21bcefd948249a928a4c8d24dbfc,
     type: 3}
   m_PrefabInstance: {fileID: 761801497}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &756348341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5585021267923854729, guid: 56de21bcefd948249a928a4c8d24dbfc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1115784704}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &761801497
 PrefabInstance:
@@ -1578,6 +1596,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997818447}
   m_CullTransparentMesh: 0
+--- !u!1 &1004729429 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5585021267923854729, guid: 56de21bcefd948249a928a4c8d24dbfc,
+    type: 3}
+  m_PrefabInstance: {fileID: 968617889}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1014240548
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,6 +2895,14 @@ MonoBehaviour:
   player2LifeBar: {fileID: 475354554}
   lifePrefab: {fileID: 5585021267923854729, guid: 56de21bcefd948249a928a4c8d24dbfc,
     type: 3}
+  p1Life:
+  - {fileID: 756348341}
+  - {fileID: 1004729429}
+  - {fileID: 694121656}
+  p2Life:
+  - {fileID: 2136104537}
+  - {fileID: 2034567059}
+  - {fileID: 60298786}
   gameOverScreen: {fileID: 78650359}
   timerText: {fileID: 517638168}
   gameTime: 50
@@ -3570,6 +3602,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 918de468ccaa6f5e3b820804904ca62e, type: 3}
+--- !u!1 &2034567059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5585021267923854729, guid: 56de21bcefd948249a928a4c8d24dbfc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2068007972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2068007972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3729,6 +3767,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2136104537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5585021267923854729, guid: 56de21bcefd948249a928a4c8d24dbfc,
+    type: 3}
+  m_PrefabInstance: {fileID: 761801497}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7165060805360767095
 PrefabInstance:
   m_ObjectHideFlags: 0

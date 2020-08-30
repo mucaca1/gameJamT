@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject lifePrefab;
 
-    private GameObject []p1Life = new GameObject[3];
-    private GameObject []p2Life = new GameObject[3];
+    public GameObject []p1Life = new GameObject[3];
+    public GameObject []p2Life = new GameObject[3];
 
     public GameObject gameOverScreen;
     public Text timerText;
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     private void InitGame()
     {
-        gameStatus.Invoke(true);
+        gameStatus?.Invoke(true);
         winPlayerInfoText.text = "";
         
         player1ScoreCounter = -1;
@@ -59,8 +59,8 @@ public class GameManager : MonoBehaviour
 
         gameOverScreen.SetActive(false);
 
-        DestroyAllChildrens(player1LifeBar);
-        DestroyAllChildrens(player2LifeBar);
+        // DestroyAllChildrens(player1LifeBar);
+        // DestroyAllChildrens(player2LifeBar);
         
         timer.Start();
         timerText.text = "" + (gameTime - elapsedTime);
@@ -123,26 +123,32 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    private void DestroyAllChildrens(GameObject obj) {
-        foreach (Transform child in obj.transform) {
-            GameObject.Destroy(child.gameObject);
-        }
-    }
+    // private void DestroyAllChildrens(GameObject obj) {
+    //     foreach (Transform child in obj.transform) {
+    //         GameObject.Destroy(child.gameObject);
+    //     }
+    // }
 
     private void PlayerDeath(Player.PlayerTag deadPlayerTag) {}
 
     private void PlayerSpawn(Player player)
     {
-        if  (player.playerTag == Player.PlayerTag.One) 
+        if  (player.playerTag == Player.PlayerTag.One)
         {
-            DestroyAllChildrens(player1LifeBar);
+            foreach (var o in p1Life)
+            {
+                o.GetComponent<LifeUI>().LifeUp();
+            }
         }
         else 
         {
-            DestroyAllChildrens(player2LifeBar);
+            foreach (var o in p2Life)
+            {
+                o.GetComponent<LifeUI>().LifeUp();
+            }
         }
 
-        SpawnLifeBar(player.playerTag);
+        //SpawnLifeBar(player.playerTag);
     }
 
     public void RestartGame(bool b)
