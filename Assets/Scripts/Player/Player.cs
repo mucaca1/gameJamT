@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.ParticleSystemJobs;
 using UnityEditor.Animations;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -27,7 +28,7 @@ public class Player : MonoBehaviour
 
     public float moveSpeed;
     public float health;
-    public Vector2 direction;
+    private Vector2 direction;
     public int deadTimer = 3;
 
     public GameObject wallPrefab;
@@ -35,8 +36,11 @@ public class Player : MonoBehaviour
 
     private static float wallOffset = 1;
 
-    public Animator animator;
-    public InputManager inputManager;
+    private Animator animator;
+    private InputManager inputManager;
+
+    public ParticleSystem particles;
+    public Color hitParticlesColor;
 
     public AudioClip[] attack;
     public AudioClip hit;
@@ -59,6 +63,8 @@ public class Player : MonoBehaviour
         direction = playerTag == PlayerTag.One ? Vector2.right : Vector2.left;
 
         initPosition = this.transform.position;
+
+        particles.startColor = hitParticlesColor;
     }
 
     // Update is called once per frame
@@ -123,7 +129,9 @@ public class Player : MonoBehaviour
 
         onHit?.Invoke(playerTag, (int)health);
 
-        if (health <= 0) 
+        particles.Play();
+
+        if (health <= 0)
             Die();
     }
 
