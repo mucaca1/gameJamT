@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.ParticleSystemJobs;
@@ -44,6 +45,8 @@ public class Player : MonoBehaviour
 
     public AudioClip[] attack;
     public AudioClip hit;
+
+    private Material material;
     
     // Start is called before the first frame update
     void Awake()
@@ -65,6 +68,7 @@ public class Player : MonoBehaviour
         initPosition = this.transform.position;
 
         particles.startColor = hitParticlesColor;
+        material = GetComponent<SpriteRenderer>().material;
     }
 
     // Update is called once per frame
@@ -131,8 +135,16 @@ public class Player : MonoBehaviour
 
         particles.Play();
 
+        material.SetFloat("_IsBlinking", 1);
+        Invoke("EndBlinking", 2);
+
         if (health <= 0)
             Die();
+    }
+
+    private void EndBlinking() 
+    {
+        material.SetFloat("_IsBlinking", 0);
     }
 
     public void Respawn()
@@ -150,6 +162,7 @@ public class Player : MonoBehaviour
     // https://www.youtube.com/watch?v=dNQs_Bef_V8
     private void Die() 
     {
+        EndBlinking();
         onDeath?.Invoke(playerTag);
         animator.SetBool("isDead", true);
         inputManager.enabled = false;
