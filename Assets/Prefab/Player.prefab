@@ -66,6 +66,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3c7eda351186b1b4e8e92463a832e439, type: 3}
   - {fileID: 8300000, guid: 6f0b8bf3982c21d409f616910609fbfd, type: 3}
   hit: {fileID: 8300000, guid: 64d3fdb74702a1343a32f91b93ecf68a, type: 3}
+  splashPrefab: {fileID: 6868042752823806739, guid: abed889cc290f064abba68d9ba69034d,
+    type: 3}
 --- !u!114 &6618515947526496523
 MonoBehaviour:
   m_ObjectHideFlags: 0

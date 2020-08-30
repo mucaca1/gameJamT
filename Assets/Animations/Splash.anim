@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Spash
+  m_Name: Splash
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,12 +19,6 @@ AnimationClip:
   m_FloatCurves: []
   m_PPtrCurves:
   - curve:
-    - time: 0
-      value: {fileID: 3082827458676834625, guid: af93b65e4dff3824893d0ede468b46a1,
-        type: 3}
-    - time: 0.083333336
-      value: {fileID: 2949124496093521401, guid: af93b65e4dff3824893d0ede468b46a1,
-        type: 3}
     - time: 0.16666667
       value: {fileID: 3856339600861581994, guid: af93b65e4dff3824893d0ede468b46a1,
         type: 3}
@@ -95,8 +89,6 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 3082827458676834625, guid: af93b65e4dff3824893d0ede468b46a1, type: 3}
-    - {fileID: 2949124496093521401, guid: af93b65e4dff3824893d0ede468b46a1, type: 3}
     - {fileID: 3856339600861581994, guid: af93b65e4dff3824893d0ede468b46a1, type: 3}
     - {fileID: -3694706644559604526, guid: af93b65e4dff3824893d0ede468b46a1, type: 3}
     - {fileID: -1069368988204287220, guid: af93b65e4dff3824893d0ede468b46a1, type: 3}

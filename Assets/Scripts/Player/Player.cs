@@ -44,6 +44,8 @@ public class Player : MonoBehaviour
 
     public AudioClip[] attack;
     public AudioClip hit;
+
+    public GameObject splashPrefab;
     
     // Start is called before the first frame update
     void Awake()
@@ -81,21 +83,25 @@ public class Player : MonoBehaviour
                 inputManager.GetJoystickInput().y * -1f,
                 0.0f
             ).normalized * moveSpeed * Time.deltaTime;
-            
-            direction = inputManager.GetJoystickInput();
-            direction.y *= -1f;
-            
+
             Debug.Log("Player " + inputManager.inputAlternative + ": horizontal - [" + inputManager.GetJoystickInput().x + "], vertical - [" + inputManager.GetJoystickInput().y * -1 + "]");
         }
         else
         {
             animator.SetBool("isMoving", false);
         }
+        
+        direction = inputManager.GetJoystickInput();
+        direction.y *= -1f;
 
         if (inputManager.GetFireButton())
         {
             SoundPlayer.PlaySound(attack[Random.Range(0,attack.Length)]);
-            Attack();
+            if (direction.normalized.magnitude != 0)
+                Attack();
+            else
+                SplashDisplay();
+            
             Debug.Log("Player " + inputManager.inputAlternative + ": Fire button");
         }
 
@@ -156,5 +162,11 @@ public class Player : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
 
         Invoke("Respawn", deadTimer);
+    }
+
+    private void SplashDisplay()
+    {
+        GameObject a = Instantiate(splashPrefab, this.transform.position, Quaternion.identity);
+        Destroy(a, 1.6f);
     }
 }
