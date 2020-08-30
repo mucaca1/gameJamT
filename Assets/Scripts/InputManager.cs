@@ -36,7 +36,7 @@ public class InputManager : MonoBehaviour
         joystick.x = Input.GetAxisRaw("Horizontal" + (int)inputAlternative);
         joystick.y = Input.GetAxisRaw("Vertical" + (int)inputAlternative);
         
-        actionButton = Input.GetKeyDown("joystick " + (int)inputAlternative + " button 0") || (InputAlternative.One == inputAlternative ? Input.GetKeyDown("e"): Input.GetKeyDown(","));
+        actionButton = Input.GetKey("joystick " + (int)inputAlternative + " button 0") || (InputAlternative.One == inputAlternative ? Input.GetKey("e"): Input.GetKey(","));
         fireButton = Input.GetKeyDown("joystick " + (int)inputAlternative + " button 1") || (InputAlternative.One == inputAlternative ? Input.GetKeyDown("f"): Input.GetKeyDown("."));
         menuButton = Input.GetKeyDown("joystick " + (int)inputAlternative + " button 6")  || (InputAlternative.One == inputAlternative ? Input.GetKeyDown("o"): Input.GetKeyDown("p"));
         
