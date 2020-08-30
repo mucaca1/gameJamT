@@ -164,7 +164,7 @@ public class GameManager : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
         winPlayerInfoText.text = "";
-        Invoke("SecretText", 2f);
+        Invoke("SecretText", 1f);
     }
 
     private void SecretText()
