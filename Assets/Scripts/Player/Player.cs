@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.ParticleSystemJobs;
-using UnityEditor.Animations;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -23,7 +18,7 @@ public class Player : MonoBehaviour
         Two = 2
     }
 
-    public AnimatorController[] animations;
+    public RuntimeAnimatorController[] animations;
 
     public PlayerTag playerTag = PlayerTag.One;
 
