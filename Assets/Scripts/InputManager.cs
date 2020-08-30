@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
     }
     
     public static event Action<bool> onFire;
+    public static event Action<bool> onAction; 
 
     [Tooltip("Current joystick input")]
     private Vector2 joystick = new Vector2();
@@ -40,8 +41,12 @@ public class InputManager : MonoBehaviour
         fireButton = Input.GetKeyDown("joystick " + (int)inputAlternative + " button 1") || (InputAlternative.One == inputAlternative ? Input.GetKeyDown("f"): Input.GetKeyDown("."));
         menuButton = Input.GetKeyDown("joystick " + (int)inputAlternative + " button 6")  || (InputAlternative.One == inputAlternative ? Input.GetKeyDown("o"): Input.GetKeyDown("p"));
         
+        bool pressedActionButton = Input.GetKeyDown("joystick " + (int)inputAlternative + " button 0") || (InputAlternative.One == inputAlternative ? Input.GetKeyDown("e"): Input.GetKeyDown(","));
+        
         if (fireButton)
             onFire?.Invoke(true);
+        if (pressedActionButton)
+            onAction?.Invoke(true);
     }
 
     private void Update()
