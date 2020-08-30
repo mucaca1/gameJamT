@@ -22,7 +22,7 @@ public class GoToMIddle : MonoBehaviour
 
     private void Update()
     {
-        GoToPos(0.8f);
+        GoToPos(0.5f);
     }
 
     private void GoToPos(float time)
@@ -30,8 +30,7 @@ public class GoToMIddle : MonoBehaviour
         if (eTime > time)
             return;
         eTime += Time.deltaTime;
-
-
+        
         float percentage = (eTime / time);
         
         transform.position = new Vector3(startPosition.x + (distance.x * percentage),
