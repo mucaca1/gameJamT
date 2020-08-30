@@ -45,9 +45,12 @@ public class Collectible : MonoBehaviour
     {
         if (other.tag == "Player") 
         {
-            onCollect?.Invoke(other.GetComponent<Player>().playerTag, this);
-            Despawn();
-            audioPlayer.PlayOneShot(collect);
+            if (!other.gameObject.GetComponent<Player>().speeding)
+            {
+                onCollect?.Invoke(other.GetComponent<Player>().playerTag, this);
+                Despawn();
+                audioPlayer.PlayOneShot(collect);
+            }
         }    
     }
 }

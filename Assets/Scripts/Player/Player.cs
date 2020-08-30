@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
     private Material material;
     public GameObject splashPrefab;
 
-    private bool speeding = false;
+    public bool speeding = false;
     
     // Start is called before the first frame update
     void Awake()
