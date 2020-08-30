@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3e3e7842a39207849b7bcca59a9527bd
+guid: d8925076a9f787a4785bda370240dcc6
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -92,108 +92,6 @@ TextureImporter:
   - first:
       213: -3063845900688664062
     second: signs_29
-  - first:
-      213: -1244585338157411529
-    second: signs_30
-  - first:
-      213: -4321936792142771793
-    second: signs_31
-  - first:
-      213: -369177047715181561
-    second: signs_32
-  - first:
-      213: 418409284636949591
-    second: signs_33
-  - first:
-      213: -5415589879563419706
-    second: signs_34
-  - first:
-      213: 3944510060147985840
-    second: signs_35
-  - first:
-      213: 1800573500578985294
-    second: signs_36
-  - first:
-      213: -8297076457979201443
-    second: signs_37
-  - first:
-      213: 5130029373405344370
-    second: signs_38
-  - first:
-      213: 3065104238847193975
-    second: signs_39
-  - first:
-      213: 7154421294936873344
-    second: signs_40
-  - first:
-      213: 4910537862728417346
-    second: signs_41
-  - first:
-      213: 8859209908132867061
-    second: signs_42
-  - first:
-      213: 7397917478971115924
-    second: signs_43
-  - first:
-      213: 3131008065967647366
-    second: signs_44
-  - first:
-      213: 6185240507717342421
-    second: signs_45
-  - first:
-      213: -8680152858494234359
-    second: signs_46
-  - first:
-      213: -1634018318067437050
-    second: signs_47
-  - first:
-      213: 6402988787640814689
-    second: signs_48
-  - first:
-      213: 7392258773011536883
-    second: signs_49
-  - first:
-      213: -3911939856565948285
-    second: signs_50
-  - first:
-      213: 1047692908759079729
-    second: signs_51
-  - first:
-      213: 6613750488676328117
-    second: signs_52
-  - first:
-      213: 8651247129724533341
-    second: signs_53
-  - first:
-      213: 2744701099937165525
-    second: signs_54
-  - first:
-      213: 8935876418048404223
-    second: signs_55
-  - first:
-      213: 7589669719618813507
-    second: signs_56
-  - first:
-      213: -3430308600397338882
-    second: signs_57
-  - first:
-      213: 949374978589406696
-    second: signs_58
-  - first:
-      213: -4664036188166718766
-    second: signs_59
-  - first:
-      213: 8809982172501351926
-    second: signs_60
-  - first:
-      213: -7323069571618521769
-    second: signs_61
-  - first:
-      213: 9194869304285766808
-    second: signs_62
-  - first:
-      213: 9209562244475124898
-    second: signs_63
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -282,7 +180,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 334
+        y: 464
         width: 400
         height: 16
       alignment: 0
@@ -303,7 +201,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 318
+        y: 448
         width: 400
         height: 16
       alignment: 0
@@ -324,7 +222,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 302
+        y: 432
         width: 400
         height: 16
       alignment: 0
@@ -345,7 +243,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 286
+        y: 416
         width: 400
         height: 16
       alignment: 0
@@ -366,7 +264,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 270
+        y: 400
         width: 400
         height: 16
       alignment: 0
@@ -387,7 +285,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 254
+        y: 384
         width: 400
         height: 16
       alignment: 0
@@ -408,7 +306,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 238
+        y: 368
         width: 400
         height: 16
       alignment: 0
@@ -429,7 +327,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 222
+        y: 352
         width: 400
         height: 16
       alignment: 0
@@ -450,7 +348,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 206
+        y: 336
         width: 400
         height: 16
       alignment: 0
@@ -471,7 +369,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 190
+        y: 320
         width: 400
         height: 16
       alignment: 0
@@ -492,7 +390,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 174
+        y: 304
         width: 400
         height: 16
       alignment: 0
@@ -513,7 +411,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 158
+        y: 288
         width: 400
         height: 16
       alignment: 0
@@ -534,7 +432,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 142
+        y: 272
         width: 400
         height: 16
       alignment: 0
@@ -555,7 +453,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 126
+        y: 256
         width: 400
         height: 16
       alignment: 0
@@ -576,7 +474,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 110
+        y: 240
         width: 400
         height: 16
       alignment: 0
@@ -597,7 +495,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 94
+        y: 224
         width: 400
         height: 16
       alignment: 0
@@ -618,7 +516,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 78
+        y: 208
         width: 400
         height: 16
       alignment: 0
@@ -639,7 +537,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 62
+        y: 192
         width: 400
         height: 16
       alignment: 0
@@ -660,7 +558,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 46
+        y: 176
         width: 400
         height: 16
       alignment: 0
@@ -681,7 +579,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 30
+        y: 160
         width: 400
         height: 16
       alignment: 0
@@ -702,7 +600,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 14
+        y: 144
         width: 400
         height: 16
       alignment: 0
@@ -714,6 +612,195 @@ TextureImporter:
       bones: []
       spriteID: 5596502743d40d5c0800000000000000
       internalID: -4192766365435336363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: signs_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 400
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48117faa46983eda0800000000000000
+      internalID: -5916734419976646268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: signs_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 400
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19dc6e6e96c9f5a90800000000000000
+      internalID: -7322962490421752431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: signs_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 400
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f5136fd45e2f230800000000000000
+      internalID: 3671248769266048807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: signs_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 400
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6738da6170a698880800000000000000
+      internalID: -8608232634064206986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: signs_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 400
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ecd28c0f9be02dc0800000000000000
+      internalID: -3665671028337353499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: signs_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 400
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0541683751aa9540800000000000000
+      internalID: 5015498531010594062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: signs_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 400
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fd4b90e38b10e40800000000000000
+      internalID: 5620976386525421396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: signs_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 400
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 936ced97699ffd820800000000000000
+      internalID: 2945347106008647225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: signs_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20a5ae2e2680b75d0800000000000000
+      internalID: -3063845900688664062
       vertices: []
       indices: 
       edges: []
