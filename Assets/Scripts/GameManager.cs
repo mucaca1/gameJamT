@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     private void InitGame()
     {
-        gameStatus.Invoke(true);
+        gameStatus?.Invoke(true);
         winPlayerInfoText.text = "";
         
         player1ScoreCounter = -1;
