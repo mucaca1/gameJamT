@@ -15,6 +15,8 @@ public class Collectible : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
 
+    private bool status;
+
     void Awake() 
     {
         audioPlayer = GetComponent<AudioSource>();
@@ -22,9 +24,15 @@ public class Collectible : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();    
     }
 
-    void Start() 
+    void Start()
     {
+        GameManager.gameStatus += GameStatus;
         Despawn();
+    }
+
+    private void GameStatus(bool status)
+    {
+        this.status = status;
     }
 
     public void Spawn()
@@ -43,7 +51,7 @@ public class Collectible : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.tag == "Player") 
+        if (status && other.tag == "Player") 
         {
             if (!other.gameObject.GetComponent<Player>().speeding)
             {
