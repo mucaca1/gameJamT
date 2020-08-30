@@ -59,8 +59,8 @@ public class GameManager : MonoBehaviour
 
         gameOverScreen.SetActive(false);
 
-        DestroyAllChildrens(player1LifeBar);
-        DestroyAllChildrens(player2LifeBar);
+        DestroyAllChildrens(Player.PlayerTag.One);
+        DestroyAllChildrens(Player.PlayerTag.Two);
         
         timer.Start();
         timerText.text = "" + (gameTime - elapsedTime);
@@ -123,9 +123,20 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    private void DestroyAllChildrens(GameObject obj) {
-        foreach (Transform child in obj.transform) {
-            GameObject.Destroy(child.gameObject);
+    private void DestroyAllChildrens(Player.PlayerTag playerTag) {
+        if  (playerTag == Player.PlayerTag.One) 
+        {
+            foreach (GameObject obj in p1Life)
+            {
+                Destroy(obj);
+            }
+        }
+        else 
+        {
+            foreach (GameObject obj in p2Life)
+            {
+                Destroy(obj);
+            }
         }
     }
 
@@ -133,14 +144,7 @@ public class GameManager : MonoBehaviour
 
     private void PlayerSpawn(Player player)
     {
-        if  (player.playerTag == Player.PlayerTag.One) 
-        {
-            DestroyAllChildrens(player1LifeBar);
-        }
-        else 
-        {
-            DestroyAllChildrens(player2LifeBar);
-        }
+        DestroyAllChildrens(player.playerTag);
 
         SpawnLifeBar(player.playerTag);
     }
@@ -154,7 +158,7 @@ public class GameManager : MonoBehaviour
 
     private void EndGame()
     {
-        gameStatus.Invoke(false);
+        gameStatus?.Invoke(false);
         Debug.Log("GameOver");
         GameOverScreen();
     }

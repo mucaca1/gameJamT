@@ -32,8 +32,8 @@ public class Player : MonoBehaviour
 
     private static float wallOffset = 1;
 
-    private Animator animator;
-    private InputManager inputManager;
+    public Animator animator;
+    public InputManager inputManager;
 
     public ParticleSystem particles;
     public Color hitParticlesColor;
@@ -49,8 +49,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        animator = this.GetComponent<Animator>();
-        inputManager = GetComponent<InputManager>();
+        //animator = this.GetComponent<Animator>();
+        //inputManager = GetComponent<InputManager>();
 
         animator.runtimeAnimatorController = animations[((int)playerTag) - 1];
 
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
                 0.0f
             ).normalized * (speeding ? (moveSpeed * 3) : moveSpeed) * Time.deltaTime;
 
-            Debug.Log("Player " + inputManager.inputAlternative + ": horizontal - [" + inputManager.GetJoystickInput().x + "], vertical - [" + inputManager.GetJoystickInput().y * -1 + "]");
+            //Debug.Log("Player " + inputManager.inputAlternative + ": horizontal - [" + inputManager.GetJoystickInput().x + "], vertical - [" + inputManager.GetJoystickInput().y * -1 + "]");
         }
         else
         {
