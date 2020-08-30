@@ -48,6 +48,8 @@ public class Player : MonoBehaviour
 
     private Material material;
     public GameObject splashPrefab;
+
+    private bool speeding = false;
     
     // Start is called before the first frame update
     void Awake()
@@ -85,7 +87,7 @@ public class Player : MonoBehaviour
                 inputManager.GetJoystickInput().x,
                 inputManager.GetJoystickInput().y * -1f,
                 0.0f
-            ).normalized * moveSpeed * Time.deltaTime;
+            ).normalized * (speeding ? (moveSpeed * 3) : moveSpeed) * Time.deltaTime;
 
             Debug.Log("Player " + inputManager.inputAlternative + ": horizontal - [" + inputManager.GetJoystickInput().x + "], vertical - [" + inputManager.GetJoystickInput().y * -1 + "]");
         }
@@ -112,6 +114,8 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Player " + inputManager.inputAlternative + ": Action button");
         }
+
+        speeding = inputManager.GetActionButton();
 
         if (inputManager.GetMenuButton())
         {

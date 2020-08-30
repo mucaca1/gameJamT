@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,12 @@ public class GameManager : MonoBehaviour
     private int elapsedTime = 0;
     private System.Timers.Timer timer;
 
+    public Text player1Score;
+    public Text player2Score;
+
+    private int player1ScoreCounter;
+    private int player2ScoreCounter;
+
     private void Awake() 
     {
         Player.onDeath += PlayerDeath;
@@ -31,11 +38,19 @@ public class GameManager : MonoBehaviour
         timer.Elapsed += Tick;
 
         InitGame();
+        Collectible.onCollect += ScoreUpdate;
     }
 
     private void InitGame()
     {
+        player1ScoreCounter = -1;
+        player2ScoreCounter = -1;
+
+        ScoreUpdate(Player.PlayerTag.One, null);
+        ScoreUpdate(Player.PlayerTag.Two, null);
+
         gameOverScreen.SetActive(false);
+        
         DestroyAllChildrens(player1LifeBar);
         DestroyAllChildrens(player2LifeBar);
         
@@ -134,5 +149,37 @@ public class GameManager : MonoBehaviour
     private void GameOverScreen()
     {
         gameOverScreen.SetActive(true);
+    }
+
+    public void ScoreUpdate(Player.PlayerTag tag, Collectible collectible)
+    {
+        Debug.Log(tag + ", " + collectible);
+        if (tag == Player.PlayerTag.One)
+        {
+            ChangeColor(player1Score, Color.green);
+            player1Score.text = "Score: " + ++player1ScoreCounter;
+            Invoke("Change1Color", 0.5f);
+        }
+        else
+        {
+            ChangeColor(player2Score, Color.green);
+            player2Score.text = "Score: " + ++player2ScoreCounter;
+            Invoke("Change2Color", 0.5f);
+        }
+    }
+
+    public void Change1Color()
+    {
+        ChangeColor(player1Score, Color.white);
+    }
+
+    public void Change2Color()
+    {
+        ChangeColor(player2Score, Color.white);
+    }
+
+    public void ChangeColor(Text t, Color c)
+    {
+        t.color = c;
     }
 }
