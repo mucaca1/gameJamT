@@ -41,7 +41,7 @@ public class InputManager : MonoBehaviour
         menuButton = Input.GetKeyDown("joystick " + (int)inputAlternative + " button 6")  || (InputAlternative.One == inputAlternative ? Input.GetKeyDown("o"): Input.GetKeyDown("p"));
         
         if (fireButton)
-            onFire.Invoke(true);
+            onFire?.Invoke(true);
     }
 
     private void Update()
