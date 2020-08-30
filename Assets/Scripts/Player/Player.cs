@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     public static event Action<PlayerTag, int> onHit;
     public static event Action<PlayerTag> onDeath;
+    public static event Action<Player> onSpawn;
 
     private Vector3 initPosition;
 
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public float health;
     public Vector2 direction;
+    public int deadTimer = 3;
 
     public GameObject wallPrefab;
     public GameObject chargePrefab;
@@ -132,6 +134,8 @@ public class Player : MonoBehaviour
         animator.SetBool("isDead", false);
         inputManager.enabled = true;
         GetComponent<BoxCollider2D>().enabled = true;
+
+        onSpawn?.Invoke(this);
     }
 
     // Omae wa mou shindeiru
@@ -142,5 +146,7 @@ public class Player : MonoBehaviour
         animator.SetBool("isDead", true);
         inputManager.enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
+
+        Invoke("Respawn", deadTimer);
     }
 }
