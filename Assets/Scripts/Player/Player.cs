@@ -134,6 +134,7 @@ public class Player : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = true;
     }
 
+    // Omae wa mou shindeiru
     private void Die() 
     {
         onDeath?.Invoke(playerTag);
