@@ -13,15 +13,23 @@ public class GameManager : MonoBehaviour
 
     public GameObject gameOverScreen;
 
+    public int gameTime = 50;
+    private int elapsedTime = 0;
+    private System.Timers.Timer timer;
+
     private void Awake() 
     {
         Player.onDeath += PlayerDeath;
         Player.onSpawn += PlayerSpawn;
+        Player.onHit += OnPlayerHit;
     }
 
     private void Start()
     {
-        Player.onHit += OnPlayerHit;
+        timer = new System.Timers.Timer(1000);
+        timer.AutoReset = true;
+        timer.Elapsed += Tick;
+
         InitGame();
     }
 
@@ -30,6 +38,8 @@ public class GameManager : MonoBehaviour
         gameOverScreen.SetActive(false);
         DestroyAllChildrens(player1LifeBar);
         DestroyAllChildrens(player2LifeBar);
+        
+        timer.Start();
 
         // This is done in PlayerSpawn when player spawns
         //SpawnLifeBar(Player.PlayerTag.One);
@@ -39,6 +49,22 @@ public class GameManager : MonoBehaviour
         {
             o.GetComponent<Player>().Respawn();
         }
+    }
+
+    void Update() 
+    {
+        // Bacasue fucking callback scope in C# -_-
+        if (elapsedTime > gameTime)
+        {
+            timer.Stop();
+            EndGame();
+            elapsedTime = 0;
+        }
+    }
+
+    private void Tick(System.Object source, System.Timers.ElapsedEventArgs e)
+    {
+        elapsedTime++;
     }
 
     private void SpawnLifeBar(Player.PlayerTag playerTag)
@@ -75,12 +101,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void PlayerDeath(Player.PlayerTag deadPlayerTag)
-    {
-        // TODO handle player death - GAME OVER screen?
-        //InputManager.onFire += RestartGame;
-        //Invoke("GameOverScreen", 2);
-    }
+    private void PlayerDeath(Player.PlayerTag deadPlayerTag) {}
 
     private void PlayerSpawn(Player player)
     {
@@ -101,6 +122,13 @@ public class GameManager : MonoBehaviour
         InputManager.onFire -= RestartGame;
         
         InitGame();
+    }
+
+    private void EndGame()
+    {
+        Debug.Log("GameOver");
+        InputManager.onFire += RestartGame;
+        Invoke("GameOverScreen", 2);
     }
 
     private void GameOverScreen()
