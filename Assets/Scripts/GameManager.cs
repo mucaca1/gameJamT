@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private GameObject []p2Life = new GameObject[3];
 
     public GameObject gameOverScreen;
+    public Text timerText;
 
     public int gameTime = 50;
     private int elapsedTime = 0;
@@ -50,11 +51,12 @@ public class GameManager : MonoBehaviour
         ScoreUpdate(Player.PlayerTag.Two, null);
 
         gameOverScreen.SetActive(false);
-        
+
         DestroyAllChildrens(player1LifeBar);
         DestroyAllChildrens(player2LifeBar);
         
         timer.Start();
+        timerText.text = "" + (gameTime - elapsedTime);
 
         // This is done in PlayerSpawn when player spawns
         //SpawnLifeBar(Player.PlayerTag.One);
@@ -74,6 +76,10 @@ public class GameManager : MonoBehaviour
             timer.Stop();
             EndGame();
             elapsedTime = 0;
+        }
+        else 
+        {
+            timerText.text = "" + (gameTime - elapsedTime);
         }
     }
 
